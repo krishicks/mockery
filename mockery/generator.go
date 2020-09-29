@@ -645,6 +645,7 @@ func (g *Generator) Write(w io.Writer) error {
 	opt := &imports.Options{Comments: true}
 	theBytes := g.buf.Bytes()
 
+	imports.Debug = true
 	res, err := imports.Process("mock.go", theBytes, opt)
 	if err != nil {
 		line := "--------------------------------------------------------------------------------------------"
